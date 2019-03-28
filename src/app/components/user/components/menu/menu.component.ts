@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  dishes: string[] = ['Нарої', 'Салати', 'Супи'];
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
 
+  sendSurchForm(form: NgForm) {
+    console.log(form.value.surchWord);
+    form.resetForm();
+  }
 }
