@@ -13,15 +13,8 @@
     <img src="https://img.icons8.com/metro/26/000000/shopping-cart.png"></button>
 </div>
 </nav>
-<ul class="list-group">
-  <li class="list-group-item"><img src="https://img.icons8.com/metro/50/000000/coffee.png">
-    <a class="align-bottom fs-30" >Напої</a></li>
-  <li class="list-group-item"><img src="https://img.icons8.com/metro/50/000000/noodles.png">
-    <a class="align-bottom fs-30">Гарячі страви</a></li>
-  <li class="list-group-item"><img src="https://img.icons8.com/metro/50/000000/olive.png">
-    <a class="align-bottom fs-30">Салати</a></li>
-  <li class="list-group-item"><img src="https://img.icons8.com/metro/50/000000/tapas.png">
-    <a class="align-bottom fs-30">Закуски</a></li>
-  <li class="list-group-item"><img src="https://img.icons8.com/metro/50/000000/birthday-cake.png">
-    <a class="align-bottom fs-30">Десерт</a></li>
+<ul class="list-group" *ngFor="let dish of dishes">
+  <li class="list-group-item">
+    <a class="align-bottom fs-30" >{{dish}}</a>
+  </li>
 </ul>

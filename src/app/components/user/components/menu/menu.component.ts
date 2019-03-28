@@ -7,7 +7,7 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  dishes: string[] = ['Нарої', 'Салати', 'Супи'];
+  dishes: string[] = ['Напої', 'Салати', 'Супи'];
 
   constructor() {
 
