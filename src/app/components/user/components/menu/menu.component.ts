@@ -7,7 +7,11 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  dishes: string[] = ['Напої', 'Салати', 'Супи'];
+  dishes: string[] = ['Напої++', 'Салати', 'Супи'];
+  img = '123.jpg';
+  folder = 'This';
+
+  path = 'http://127.0.0.1:8887/' + this.folder + '/' + this.img;
 
   constructor() {
 

@@ -4,3 +4,10 @@
 img{margin: 3px;
 }
 #form{margin: auto}
+
+.categotyIcon{
+  height: 7%;
+  width: 7%;
+  border-radius:50%;
+  margin-right: 14px;
+}
