@@ -6,6 +6,7 @@ import { UserComponent } from './components/user/user.component';
 import { BasketComponent } from './components/user/components/basket/basket.component';
 import { MenuComponent } from './components/user/components/menu/menu.component';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import {FormsModule} from '@angular/forms';
     MenuComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

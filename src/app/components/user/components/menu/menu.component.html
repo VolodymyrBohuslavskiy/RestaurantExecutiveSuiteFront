@@ -15,10 +15,10 @@
 </nav>
 
 
-<ul class="list-group" *ngFor="let dish of dishes">
+<ul class="list-group" *ngFor="let category of categoryes">
   <li class="list-group-item">
-    <img [src]="path" alt="{{dish}}" class="categotyIcon">
-    <a class="align-bottom fs-30" >{{dish}}</a>
+    <img [src]="path+category.categoryName+'/'+category.categoryImage" alt="{{category.categoryImage}}" class="categotyIcon">
+    <a class="align-bottom fs-30" >{{category.categoryName}}</a>
   </li>
 </ul>
 
