@@ -7,13 +7,15 @@ import { BasketComponent } from './components/user/components/basket/basket.comp
 import { MenuComponent } from './components/user/components/menu/menu.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { SearchResultComponent } from './components/user/components/search-result/search-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     BasketComponent,
-    MenuComponent
+    MenuComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

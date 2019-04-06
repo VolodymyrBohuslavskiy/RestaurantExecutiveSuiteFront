@@ -9,6 +9,8 @@ import {DishService} from '../../services/dish.service';
 })
 export class UserComponent implements OnInit {
   bascet = false;
+  searchResult = false;
+  menu = true;
 
   constructor(
     private dishService: DishService
@@ -22,6 +24,8 @@ export class UserComponent implements OnInit {
     if (form.valid && form.touched) {
       this.dishService.find(form.value.SearchWord).subscribe();
       form.resetForm();
+      this.searchResult = true;
+      this.menu = false;
     }
   }
 
