@@ -31,10 +31,14 @@ export class UserComponent implements OnInit {
 
   showBascet() {
     this.bascet = true;
+    this.searchResult = false;
+    this.menu = false;
   }
 
   hideBascet() {
     this.bascet = false;
+    this.menu = true;
+    this.searchResult = false;
   }
 
 
