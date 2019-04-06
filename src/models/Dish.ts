@@ -5,7 +5,7 @@ export class Dish {
     public  title?: string,
     public  about?: string,
     public  image?: string,
-    public  isActive?: boolean,
+    public  entree?: boolean,
     public  coast?: number
   ) {
   }

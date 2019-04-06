@@ -6,7 +6,8 @@ export class Category {
     public   id?: string,
     public categoryName?: string,
     public categoryImage?: string,
-    public dishes?: Dish[]
+    public dishes?: Dish[],
+    public show = false
   ) {
   }
 }
