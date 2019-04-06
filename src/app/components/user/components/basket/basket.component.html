@@ -1,8 +1,6 @@
-<p>
-  basket works!
-</p>
 <ul *ngFor="let dish of dishService.basket">
   <li>{{dish.title}}</li>
   <button (click)="deleteDish(dish)">Delete</button>
 </ul>
-<button (click)="buy()">Buy</button>
+<p [ngStyle]="{display: showbtn ? 'none' : 'block'}"> Basket is empty !</p>
+<button (click)="buy()" [ngStyle]="{display: showbtn ? 'block' : 'none'}">Buy</button>

@@ -26,6 +26,7 @@ export class UserComponent implements OnInit {
       form.resetForm();
       this.searchResult = true;
       this.menu = false;
+      this.bascet = false;
     }
   }
 

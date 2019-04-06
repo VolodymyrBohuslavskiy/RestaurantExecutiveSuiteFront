@@ -19,4 +19,11 @@ export class DishService {
   find(searchWord: string): Observable<Dish[]> {
     return this.http.get<Dish[]>(this.categoryService.path + '/find_dish', {params: {word: searchWord}});
   }
+
+  sendOrder() {
+    if (this.basket.length !== 0) {
+      this.http.post(this.categoryService.path + '/add_account', JSON.stringify(this.basket)).subscribe();
+      this.basket.splice(0, this.basket.length);
+    }
+  }
 }
