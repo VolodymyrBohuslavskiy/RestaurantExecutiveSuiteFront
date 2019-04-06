@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DishService} from '../../../../services/dish.service';
 
 @Component({
   selector: 'app-basket',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private dishService: DishService) {
+  }
 
   ngOnInit() {
   }
 
+  buy() {
+    for (const dish of this.dishService.basket) {
+      console.log(dish.title);
+    }
+  }
 }

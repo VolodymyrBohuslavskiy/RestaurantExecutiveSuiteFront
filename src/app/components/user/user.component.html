@@ -1,5 +1,31 @@
-<app-menu></app-menu>
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Restaurant executive suite</a>
+  <div class="form-inline">
+    <form #searchForm="ngForm"  (ngSubmit)="sendSearchForm(searchForm)">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        name="SearchWord"
+        ngModel>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <img src="https://img.icons8.com/metro/26/000000/search.png">
+      </button>
+    </form>
+    <button class="btn btn-outline-success my-2 my-sm-0 ml-2 " (click)="hideBascet()">
+      <img src="https://img.icons8.com/metro/26/000000/undo.png">
+    </button>
 
+    <button class="btn btn-outline-success my-2 my-sm-0 ml-2" (click)="showBascet()">
+      <img src="https://img.icons8.com/metro/26/000000/shopping-cart.png">
+    </button>
+  </div>
+</nav>
+
+<app-menu [ngStyle]="{display: bascet ? 'none' : 'block'}"></app-menu>
+
+<app-basket [ngStyle]="{display: bascet ? 'block' : 'none'}"></app-basket>
 
 
 

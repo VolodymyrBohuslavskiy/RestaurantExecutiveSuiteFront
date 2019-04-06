@@ -8,6 +8,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class DishService {
+  basket: Dish[] = [];
 
   constructor(
     private http: HttpClient,
