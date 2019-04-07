@@ -1,0 +1,13 @@
+<ul *ngFor="let account of accounts">
+  <li>{{account.id + ' ' + account.accountStatuse}}
+    <button (click)="submit(account.id)" [ngStyle]="{display: account.accountStatuse !=='SUBMITTED' ? 'block' : 'none'}">
+      Submitted
+    </button>
+    <button (click)="pay(account.id)">Pay</button>
+    <ul *ngFor="let dish of account.dishList">
+      <li>
+        {{dish.title + ' ' + dish.coast}}
+      </li>
+    </ul>
+  </li>
+</ul>

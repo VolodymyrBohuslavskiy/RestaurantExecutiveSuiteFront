@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Dish} from '../../../../../models/Dish';
+import {Dish} from '../../../../models/Dish';
 import {CategoryService} from '../../../../services/category.service';
-import {Category} from '../../../../../models/Category';
+import {Category} from '../../../../models/Category';
 import {DishService} from '../../../../services/dish.service';
 
 

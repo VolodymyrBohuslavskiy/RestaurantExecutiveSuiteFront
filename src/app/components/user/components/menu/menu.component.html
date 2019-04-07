@@ -3,20 +3,19 @@
   *ngFor="let category of categoryes">
 
   <li
-    class="list-group-item"
+    class="list-group-item hov"
     (click)="showDishes(category)">
     <img
       [src]="path+category.categoryName+'/'+category.categoryImage" alt="{{category.categoryImage}}"
       class="categotyIcon">
-    <a
-      class="align-bottom fs-30">{{category.categoryName}}</a>
+    <span
+      class="align-bottom fs-30">{{category.categoryName}}</span>
 
   </li>
   <ul
     *ngFor="let dish of category.dishes"
     [ngStyle]="{display: category.show ? 'block' : 'none'}">
     <li>{{dish.title + ' ' + dish.about + ' ' + dish.entree + ' '}}
-
       <button (click)="addInBascet(dish)"
       >Get for {{dish.coast + ' ugn'}} </button>
     </li>

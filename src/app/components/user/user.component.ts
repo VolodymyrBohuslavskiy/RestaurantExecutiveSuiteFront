@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {DishService} from '../../services/dish.service';
+import {Dish} from '../../models/Dish';
 
 @Component({
   selector: 'app-user',
@@ -12,6 +13,7 @@ export class UserComponent implements OnInit {
   searchResult = false;
   menu = true;
 
+
   constructor(
     private dishService: DishService
   ) {
@@ -21,8 +23,8 @@ export class UserComponent implements OnInit {
   }
 
   sendSearchForm(form: NgForm) {
-    if (form.valid && form.touched) {
-      this.dishService.find(form.value.SearchWord).subscribe();
+    if (form.valid && form.touched && form.value.SearchWord !== '') {
+      this.dishService.find(form.value.SearchWord).subscribe(reqestDishes => this.dishService.searchDishes = reqestDishes);
       form.resetForm();
       this.searchResult = true;
       this.menu = false;

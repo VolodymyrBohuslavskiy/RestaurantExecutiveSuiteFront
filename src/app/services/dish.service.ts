@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Dish} from '../../models/Dish';
+import {Dish} from '../models/Dish';
 import {CategoryService} from './category.service';
 import {HttpClient} from '@angular/common/http';
 
@@ -9,6 +9,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class DishService {
   basket: Dish[] = [];
+  searchDishes: Dish[] = [];
+
 
   constructor(
     private http: HttpClient,
@@ -26,4 +28,5 @@ export class DishService {
       this.basket.splice(0, this.basket.length);
     }
   }
+
 }

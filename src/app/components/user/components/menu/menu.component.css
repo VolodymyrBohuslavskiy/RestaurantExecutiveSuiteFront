@@ -12,3 +12,8 @@ img{margin: 3px;
   margin-right: 14px;
 }
 li{list-style-type: none}
+
+.hov:hover {
+  background: darkgrey;
+}
+a{text-decoration: none}

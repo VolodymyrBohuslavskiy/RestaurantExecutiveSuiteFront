@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DishService} from '../../../../services/dish.service';
-import {Dish} from '../../../../../models/Dish';
+import {Dish} from '../../../../models/Dish';
 
 @Component({
   selector: 'app-basket',
@@ -24,6 +24,7 @@ export class BasketComponent implements OnInit {
 
   buy() {
     this.dishService.sendOrder();
+    this.showbtn = false;
   }
 
   deleteDish(dish: Dish) {

@@ -8,6 +8,8 @@ import { MenuComponent } from './components/user/components/menu/menu.component'
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { SearchResultComponent } from './components/user/components/search-result/search-result.component';
+import { WaiterComponent } from './components/waiter/waiter/waiter.component';
+import { AccountListComponent } from './components/waiter/components/account-list/account-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { SearchResultComponent } from './components/user/components/search-resul
     UserComponent,
     BasketComponent,
     MenuComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    WaiterComponent,
+    AccountListComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule
