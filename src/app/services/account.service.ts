@@ -17,13 +17,16 @@ export class AccountService {
     return this.http.get<Account1[]>(this.categoryService.path + '/get_all_accounts');
   }
 
+  // submit(id: number) {
+  //   this.http.patch(this.categoryService.path + '/submit', id, {headers: {action: 'SUBMITTED'}}).subscribe();
+  // }
+  //
+  // pay(id: number) {
+  //   this.http.patch(this.categoryService.path + '/pay', id, {headers: {action: 'PAID'}}).subscribe();
+  // }
 
-  submit(id: number) {
-    this.http.patch(this.categoryService.path + '/submit', id,  {headers: {action: 'SUBMITTED'}}).subscribe();
-  }
-
-  pay(id: number) {
-    this.http.patch(this.categoryService.path + '/pay', id, {headers: {action: 'PAID'}}).subscribe();
+  setAccountStatuse(id: number, statuse: string) {
+    this.http.patch(this.categoryService.path + '/set_account_statuse', id, {headers: {newStatuse: statuse}}).subscribe();
   }
 }
 

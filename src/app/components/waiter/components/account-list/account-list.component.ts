@@ -21,14 +21,23 @@ export class AccountListComponent implements OnInit {
     }, 200 * 1000);
   }
 
+
+  setAccountStatuse(id: number, statuse: string) {
+    this.accountService.setAccountStatuse(id, statuse);
+  }
+
   submit(id: number) {
+    const statuse = 'SUBMITTED';
     const one = this.accounts.find(a => a.id === id);
-    one.accountStatuse = 'SUBMITTED';
-    this.accountService.submit(id);
+    one.accountStatuse = statuse;
+    this.setAccountStatuse(id, statuse);
   }
 
   pay(id: number) {
+    const statuse = 'PAID';
     this.accounts.splice(this.accounts.findIndex(a => a.id === id), 1);
-    this.accountService.pay(id);
+    this.setAccountStatuse(id, 'PAID');
   }
+
+
 }
