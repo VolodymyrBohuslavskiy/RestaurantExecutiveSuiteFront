@@ -10,6 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { SearchResultComponent } from './components/user/components/search-result/search-result.component';
 import { WaiterComponent } from './components/waiter/waiter/waiter.component';
 import { AccountListComponent } from './components/waiter/components/account-list/account-list.component';
+import { KitchenComponent } from './components/kitchen/kitchen.component';
+import { TasklistComponent } from './components/kitchen/components/tasklist/tasklist.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AccountListComponent } from './components/waiter/components/account-lis
     MenuComponent,
     SearchResultComponent,
     WaiterComponent,
-    AccountListComponent
+    AccountListComponent,
+    KitchenComponent,
+    TasklistComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule
