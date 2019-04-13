@@ -12,6 +12,7 @@ import { WaiterComponent } from './components/waiter/waiter/waiter.component';
 import { AccountListComponent } from './components/waiter/components/account-list/account-list.component';
 import { KitchenComponent } from './components/kitchen/kitchen.component';
 import { TasklistComponent } from './components/kitchen/components/tasklist/tasklist.component';
+import { ManagerComponent } from './components/manager/manager.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TasklistComponent } from './components/kitchen/components/tasklist/task
     WaiterComponent,
     AccountListComponent,
     KitchenComponent,
-    TasklistComponent
+    TasklistComponent,
+    ManagerComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

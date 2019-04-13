@@ -23,7 +23,9 @@ export class MenuComponent implements OnInit {
 
   onlyEntree() {
     for (const category of this.categoryes) {
-      category.dishes.splice(category.dishes.findIndex(value => value.entree === false), 1);
+      if (category.dishes.find(value => value.entree === false)) {
+        category.dishes.splice(category.dishes.findIndex(value => value.entree = false), 1);
+      }
     }
   }
 

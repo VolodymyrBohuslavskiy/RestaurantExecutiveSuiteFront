@@ -1,19 +1,46 @@
 .fs-30 {
   font-size: 30px;
 }
-img{margin: 3px;
-}
-#form{margin: auto}
 
-.categotyIcon{
-  height: 7%;
-  width: 7%;
-  border-radius:50%;
+img {
+  margin: 3px;
+}
+
+#form {
+  margin: auto
+}
+
+.categotyIcon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
   margin-right: 14px;
 }
-li{list-style-type: none}
+
+.dishIcon {
+  margin-left: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius: 10%;
+  margin-right: 14px;
+}
+
+li {
+  list-style-type: none
+}
 
 .hov:hover {
   background: darkgrey;
 }
-a{text-decoration: none}
+
+a {
+  text-decoration: none
+}
+.dishBlock {
+  margin: 10px;
+  border: dimgray 3px solid;
+  border-radius: 10px;
+  padding: 20px;
+
+}
+

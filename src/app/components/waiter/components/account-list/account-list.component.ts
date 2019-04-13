@@ -18,7 +18,7 @@ export class AccountListComponent implements OnInit {
     this.accountService.getAccounts().subscribe(accounts => this.accounts = accounts);
     setTimeout(() => {
       this.ngOnInit();
-    }, 200 * 1000);
+    }, 10 * 1000);
   }
 
 

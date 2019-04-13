@@ -1,5 +1,5 @@
 <ul *ngFor="let account of accounts">
-  <li>{{account.id + ' ' + account.accountStatuse}}
+  <li [ngStyle]="{display: account.accountStatuse !=='ORDERED' && account.accountStatuse !=='PREPARING' ? 'block' : 'none'}" >{{account.id + ' ' + account.accountStatuse}}
     <button (click)="submit(account.id)" [ngStyle]="{display: account.accountStatuse !=='SUBMITTED' ? 'block' : 'none'}">
       Submitted
     </button>
@@ -11,3 +11,4 @@
     </ul>
   </li>
 </ul>
+
