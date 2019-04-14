@@ -1,0 +1,14 @@
+<ul *ngFor="let task of tasks">
+  <li [ngStyle]="{display: task.accountStatuse !=='SUBMITTED' && task.accountStatuse !=='READY' ? 'block' : 'none'}">{{task.id + ' ' + task.accountStatuse}}
+    <button (click)="preparing(task.id)" [ngStyle]="{display: task.accountStatuse !=='PREPARING' ? 'block' : 'none'}">PREPARING
+    </button>
+    <button (click)="ready(task.id)">READY
+    </button>
+
+    <ul *ngFor="let dish of task.dishList">
+      <li>{{dish.id + ' ' + dish.title + ' ' + dish.about + ' ' + dish.coast}}</li>
+
+    </ul>
+  </li>
+
+</ul>

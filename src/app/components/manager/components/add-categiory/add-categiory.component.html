@@ -1,0 +1,10 @@
+
+<form #addCategory="ngForm" (ngSubmit)="sendNewCategory(addCategory)">
+  <label>Category name
+    <input type="text" name="categoryName" ngModel>
+  </label>
+  <label>Image of category
+  <input type="file" name="categoryImage" ngModel >
+  </label>
+  <button type="submit" class="btn btn-primary">Add new category </button>
+</form>

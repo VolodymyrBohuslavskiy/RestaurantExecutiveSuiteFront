@@ -1,0 +1,23 @@
+<table class="table">
+  <thead class="thead-inverse">
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Account Status</th>
+    <th>Position</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let ac of accounts">
+  <tr>
+    <th scope="row">{{ac.id}}</th>
+    <td>{{ac.date}}</td>
+    <td>{{ac.accountStatuse}}</td>
+    <td>
+      <ul *ngFor="let dish of ac.dishList">
+        <li>{{dish.about + ' ' + dish.coast}}</li>
+      </ul>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

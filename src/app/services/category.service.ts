@@ -11,6 +11,8 @@ import {NgForm} from '@angular/forms';
 export class CategoryService {
   path = 'http://localhost:8080';
   imageServer = 'http://127.0.0.1:8887/';
+  updateTimeSec = 1000;
+
 
   constructor(
     private http: HttpClient
@@ -22,10 +24,10 @@ export class CategoryService {
   }
 
 
-  addCategory(form: NgForm, $event: {}) {
+  addCategory(form: NgForm) {
     const formData = new FormData();
     formData.append('category', JSON.stringify(new Category().categoryName = form.value.categoryName));
-    formData.append('categoryImage', null);
+    formData.append('categoryImage', form.value.categoryName, form.value.categoryName.valueOf());
     this.http.post(this.path + '/create_category', formData).subscribe();
   }
 }
