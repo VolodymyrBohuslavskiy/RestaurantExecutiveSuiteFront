@@ -14,6 +14,10 @@ export class AccountService {
   }
 
   getAccounts(): Observable<Account1[]> {
+    return this.http.get<Account1[]>(this.categoryService.path + '/get_active_accounts');
+  }
+
+  getAllAccounts(): Observable<Account1[]> {
     return this.http.get<Account1[]>(this.categoryService.path + '/get_all_accounts');
   }
   setAccountStatuse(id: number, statuse: string) {
