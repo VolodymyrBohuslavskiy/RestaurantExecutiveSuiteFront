@@ -12,7 +12,7 @@ export class CategoryService {
   path = 'http://localhost:8080';
   imageServer = 'http://127.0.0.1:8887/';
   updateTimeSec = 1000;
-
+  image: File = null;
 
   constructor(
     private http: HttpClient
@@ -23,11 +23,17 @@ export class CategoryService {
     return this.http.get<Category[]>(this.path + '/get_categoryes');
   }
 
+  pasteFile(file) {
+    this.image = file.target.files[0];
+  }
 
   addCategory(form: NgForm) {
     const formData = new FormData();
-    formData.append('category', JSON.stringify(new Category().categoryName = form.value.categoryName));
-    formData.append('categoryImage', form.value.categoryName, form.value.categoryName.valueOf());
+
+    formData.append('category', form.value.categoryName);
+    formData.append('categoryImage', this.image, this.image.name);
     this.http.post(this.path + '/create_category', formData).subscribe();
   }
+
+
 }

@@ -4,7 +4,7 @@
     <input type="text" name="categoryName" ngModel>
   </label>
   <label>Image of category
-  <input type="file" name="categoryImage" ngModel >
+  <input type="file" name="categoryImage" ngModel (change)="pasteFile($event)">
   </label>
   <button type="submit" class="btn btn-primary">Add new category </button>
 </form>

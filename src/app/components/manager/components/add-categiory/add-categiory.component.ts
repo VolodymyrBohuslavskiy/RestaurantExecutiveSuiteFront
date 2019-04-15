@@ -18,11 +18,15 @@ export class AddCategioryComponent implements OnInit {
 
   sendNewCategory(form: NgForm) {
     if (form.valid &&
-        form.touched
-        && form.value.categoryName !== '' &&
-        form.value.categoryImage !== '') {
-        this.categoryService.addCategory(form);
-        form.resetForm();
-      }
+      form.touched
+      && form.value.categoryName !== '' &&
+      form.value.categoryImage !== '') {
+      this.categoryService.addCategory(form);
+      form.resetForm();
+    }
+  }
+
+  pasteFile(file: Event) {
+    this.categoryService.pasteFile(file);
   }
 }
