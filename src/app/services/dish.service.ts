@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {Dish} from '../models/Dish';
 import {CategoryService} from './category.service';
 import {HttpClient} from '@angular/common/http';
+import {NgForm} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import {HttpClient} from '@angular/common/http';
 export class DishService {
   basket: Dish[] = [];
   searchDishes: Dish[] = [];
-
+  imgPath = 'http://127.0.0.1:8887/';
 
   constructor(
     private http: HttpClient,
@@ -29,4 +30,15 @@ export class DishService {
     }
   }
 
+  createDish(form: NgForm, file: File) {
+    const dishImage: File = file;
+    const formData = new FormData();
+    const dish = new Dish(null, form.value.title, form.value.about, dishImage.name, form.value.entree, form.value.coast);
+    console.log(JSON.stringify(dish));
+    formData.append('dish', JSON.stringify(dish));
+    formData.append('categoryName', form.value.categoryName);
+    formData.append('image', dishImage);
+    this.http.post(this.categoryService.path + '/add_dish', formData).subscribe();
+  }
 }
+

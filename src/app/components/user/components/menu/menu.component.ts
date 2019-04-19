@@ -13,7 +13,6 @@ import {DishService} from '../../../../services/dish.service';
 })
 export class MenuComponent implements OnInit {
   categoryes: Category[] = [];
-  path = 'http://127.0.0.1:8887/';
 
   constructor(
     private categoryService: CategoryService,

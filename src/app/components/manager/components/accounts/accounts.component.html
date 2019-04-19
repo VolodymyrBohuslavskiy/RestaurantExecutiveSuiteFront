@@ -7,7 +7,8 @@
     <th>Position</th>
   </tr>
   </thead>
-  <tbody *ngFor="let ac of accounts">
+  <tbody *ngFor="let ac of accounts | paginate: {itemsPerPage:20, currentPage:page}">
+
   <tr>
     <th scope="row">{{ac.id}}</th>
     <td>{{ac.date}}</td>
@@ -20,4 +21,4 @@
   </tr>
   </tbody>
 </table>
-
+<pagination-controls (pageChange)="page=$event"></pagination-controls>

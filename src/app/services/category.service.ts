@@ -29,7 +29,7 @@ export class CategoryService {
 
   addCategory(form: NgForm) {
     const formData = new FormData();
-
+    console.log(form.value.categoryName);
     formData.append('category', form.value.categoryName);
     formData.append('categoryImage', this.image, this.image.name);
     this.http.post(this.path + '/create_category', formData).subscribe();

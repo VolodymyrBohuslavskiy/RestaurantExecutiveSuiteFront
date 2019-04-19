@@ -5,7 +5,7 @@
     class="list-group-item hov"
     (click)="showDishes(category)">
     <img
-      [src]="path+category.categoryName+'/'+category.categoryImage" alt="{{category.categoryImage}}"
+      [src]="dishService.imgPath+category.categoryName+'/'+category.categoryImage" alt="{{category.categoryImage}}"
       class="categotyIcon">
     <a
       class="align-bottom fs-30">{{category.categoryName + ' (' + category.dishes.length + ')'}}</a>
@@ -15,7 +15,7 @@
     <div class="dishBlock">
       <h4>{{dish.title}}</h4>
       <p>{{dish.about}}</p>
-      <img [src]="path+category.categoryName+'/'+dish.image" class="dishIcon">
+      <img [src]="dishService.imgPath+category.categoryName+'/'+dish.image" class="dishIcon">
       <p>
       <button class="btn btn-primary" (click)="addInBascet(dish)">Get for {{dish.coast + ' ugn'}}</button>
       </p>

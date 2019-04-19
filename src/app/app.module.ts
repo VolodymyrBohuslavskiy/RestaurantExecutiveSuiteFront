@@ -17,6 +17,7 @@ import {CategoryComponent} from './components/manager/components/category/catego
 import {AddCategioryComponent} from './components/manager/components/add-categiory/add-categiory.component';
 import {RouterModule, Routes} from '@angular/router';
 import { AccountsComponent } from './components/manager/components/accounts/accounts.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 const routes: Routes = [
   {path: 'AddCategories', component: AddCategioryComponent},
@@ -39,9 +40,10 @@ const routes: Routes = [
     CategoryComponent,
     AddCategioryComponent,
     AccountsComponent,
+
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
+    BrowserModule, NgxPaginationModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

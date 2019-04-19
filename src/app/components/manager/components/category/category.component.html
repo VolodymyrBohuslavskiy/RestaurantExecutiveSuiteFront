@@ -1,16 +1,68 @@
+<div>
+  <form #dishForm="ngForm" (ngSubmit)="addDish(dishForm)">
+    <label>Title
+      <input type="text" name="title" ngModel>
+    </label>
+
+    <label>About
+      <input type="text" name="about" ngModel>
+    </label>
+
+    <label>Prise
+      <input type="number" name="coast" ngModel>
+    </label>
+
+    <label>Image
+      <input type="file" name="image" ngModel (change)="setImage($event)">
+    </label>
+
+    <label>Entree
+      <input type="checkbox" name="entree" ngModel>
+    </label>
+
+    <label>Category:
+      <select name="categoryName" ngModel>
+        <option *ngFor="let c of categoryes" value="{{c.categoryName}}" >{{c.categoryName}}</option>
+      </select>
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</div>
+
+<div>
+  <button (click)="showAddForm()" [textContent]="showAdFormB ? 'Close' : 'Add'"></button>
+  <app-add-categiory [ngStyle]="{display: showAdFormB ? 'block' : 'none'}" ></app-add-categiory>
+</div>
+
+
 <div class="row" *ngFor="let category of categoryes">
   <div class="col-sm-6 col-md-4 col-lg-3">
-
     <div class="thumbnail">
-
-
       <div class="caption">
-        <h3><img
+        <h3>
+          #{{category.id}}
+          <img
           [src]="categoryServise.imageServer+category.categoryName+'/'+category.categoryImage">
           {{category.categoryName + ' (' + category.dishes.length + ')'}}
         </h3>
+        <button (click)="showMeThis(category)">Show dishes</button>
+
+        <ul *ngFor="let dish of category.dishes" [ngStyle]="{display: category.show ? 'block' : 'none'}">
+          <li>
+            <div>
+              <h5>#{{dish.id+' '+dish.title+' entree:'+dish.entree}}</h5>
+              <img [src]="dishService.imgPath+category.categoryName+'/'+dish.image">
+              <p>{{dish.about}}</p>
+
+            </div>
+          </li>
+        </ul>
+
+
       </div>
     </div>
   </div>
-
 </div>
+
