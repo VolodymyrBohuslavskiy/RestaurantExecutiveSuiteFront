@@ -3,3 +3,26 @@ img{
   border-radius: 10px;
   margin: 10px;
 }
+
+.ln-100{
+  width: 100%;
+}
+
+#status:hover{
+border: dimgray solid 2px;
+  border-radius: 50%;
+}
+.hideFileInp{
+  display: none;
+}
+.updateIcon {
+  width: 30px;
+  height:30px;
+}
+
+.updateIcon:hover {
+
+  border: dimgray solid 2px;
+}
+
+input{margin: 10px}

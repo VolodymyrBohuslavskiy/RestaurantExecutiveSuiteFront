@@ -16,7 +16,7 @@ import {ManagerComponent} from './components/manager/manager.component';
 import {CategoryComponent} from './components/manager/components/category/category.component';
 import {AddCategioryComponent} from './components/manager/components/add-categiory/add-categiory.component';
 import {RouterModule, Routes} from '@angular/router';
-import { AccountsComponent } from './components/manager/components/accounts/accounts.component';
+import {AccountsComponent } from './components/manager/components/accounts/accounts.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 const routes: Routes = [
