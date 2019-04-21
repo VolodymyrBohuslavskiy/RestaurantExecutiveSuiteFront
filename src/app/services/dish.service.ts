@@ -23,6 +23,15 @@ export class DishService {
     return this.http.get<Dish[]>(this.categoryService.path + '/find_dish', {params: {word: searchWord}});
   }
 
+  getBasketSum(): number {
+    let sum = 0;
+    for (const basketElement of this.basket) {
+      sum = sum + basketElement.coast;
+    }
+    return sum;
+  }
+
+
   sendOrder() {
     if (this.basket.length !== 0) {
       this.http.post(this.categoryService.path + '/add_account', JSON.stringify(this.basket)).subscribe();
@@ -54,12 +63,13 @@ export class DishService {
     console.log(categoryName);
     formData.append('dish', JSON.stringify(dish));
     formData.append('categoryName', categoryName);
-
     this.http.patch(this.categoryService.path + '/update/dish', formData).subscribe();
   }
 
   deleteDish(id) {
     this.http.delete(this.categoryService.path + '/delete/dish', {params: {deleteId: id}}).subscribe();
   }
+
+
 }
 

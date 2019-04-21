@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {DishService} from '../../services/dish.service';
-import {Dish} from '../../models/Dish';
 
 @Component({
   selector: 'app-user',
@@ -12,6 +11,7 @@ export class UserComponent implements OnInit {
   bascet = false;
   searchResult = false;
   menu = true;
+  showAdninNav = false;
 
 
   constructor(
@@ -33,6 +33,7 @@ export class UserComponent implements OnInit {
   }
 
   showBascet() {
+    this.dishService.getBasketSum();
     this.bascet = true;
     this.searchResult = false;
     this.menu = false;
@@ -45,4 +46,15 @@ export class UserComponent implements OnInit {
   }
 
 
+  showAdmin() {
+    this.showAdninNav = !this.showAdninNav;
+  }
+
+  logOut() {
+    console.log('clear local storage');
+  }
+
+  showSearchComponent() {
+    this.searchResult = true;
+  }
 }

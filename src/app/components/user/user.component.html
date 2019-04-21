@@ -1,17 +1,26 @@
+<div [ngStyle]="{display: showAdninNav ? 'block' : 'none'}">
+  <button (click)="logOut()">logout</button>
+</div>
+
+
 <nav class="navbar navbar-light bg-light justify-content-between">
 
   <a class="navbar-brand">
-    <img src="https://img.icons8.com/metro/26/000000/meal.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="https://img.icons8.com/metro/26/000000/meal.png" class="d-inline-block align-top categotyIcon"
+         (dblclick)="showAdmin()">
     Restaurant executive suite</a>
   <div class="form-inline">
-    <form #searchForm="ngForm"  (ngSubmit)="sendSearchForm(searchForm)">
+
+    <form #searchForm="ngForm" (ngSubmit)="sendSearchForm(searchForm)">
       <input
         class="form-control mr-sm-2"
         type="search"
         placeholder="Search"
         aria-label="Search"
         name="SearchWord"
-        ngModel>
+        ngModel
+        (change)="showSearchComponent()">
+
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
         <img src="https://img.icons8.com/metro/26/000000/search.png">
       </button>
@@ -30,5 +39,5 @@
 
 <app-basket [ngStyle]="{display: bascet ? 'block' : 'none'}"></app-basket>
 
-<app-search-result [ngStyle]="{display: searchResult ? 'block' : 'none'}" ></app-search-result>
+<app-search-result [ngStyle]="{display: searchResult ? 'block' : 'none'}"></app-search-result>
 

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DishService} from '../../../../services/dish.service';
 import {Dish} from '../../../../models/Dish';
+import {CategoryService} from '../../../../services/category.service';
 
 @Component({
   selector: 'app-basket',
@@ -9,8 +10,7 @@ import {Dish} from '../../../../models/Dish';
 })
 export class BasketComponent implements OnInit {
   showbtn = false;
-
-  constructor(private dishService: DishService) {
+  constructor(private dishService: DishService, private categoryService: CategoryService) {
   }
 
   ngOnInit() {
@@ -19,8 +19,9 @@ export class BasketComponent implements OnInit {
     }
     setTimeout(() => {
       this.ngOnInit();
-    }, 1000);
+    }, this.categoryService.updateTimeSec);
   }
+
 
   buy() {
     this.dishService.sendOrder();

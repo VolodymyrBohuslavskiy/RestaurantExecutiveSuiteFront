@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DishService} from '../../../../services/dish.service';
+import {Dish} from '../../../../models/Dish';
 
 @Component({
   selector: 'app-search-result',
@@ -15,4 +16,7 @@ export class SearchResultComponent implements OnInit {
   }
 
 
+  addInBascet(dish: Dish) {
+    this.dishService.basket.push(dish);
+  }
 }

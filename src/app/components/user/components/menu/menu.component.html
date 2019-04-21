@@ -7,18 +7,18 @@
     <img
       [src]="dishService.imgPath+category.categoryName+'/'+category.categoryImage" alt="{{category.categoryImage}}"
       class="categotyIcon">
-    <a
-      class="align-bottom fs-30">{{category.categoryName + ' (' + category.dishes.length + ')'}}</a>
+    <span
+      class="align-bottom fs-30">{{category.categoryName + ' (' + category.dishes.length + ')'}}</span>
+    <img [src]="category.show ? 'https://img.icons8.com/color/48/000000/circled-chevron-up.png'
+    : 'https://img.icons8.com/color/48/000000/circled-chevron-down.png'">
   </li>
 
-  <div *ngFor="let dish of category.dishes" [ngStyle]="{display: category.show ? 'block' : 'none'}" class="dishWindow">
-    <div class="dishBlock">
-      <h4>{{dish.title}}</h4>
-      <p>{{dish.about}}</p>
-      <img [src]="dishService.imgPath+category.categoryName+'/'+dish.image" class="dishIcon">
-      <p>
-      <button class="btn btn-primary" (click)="addInBascet(dish)">Get for {{dish.coast + ' ugn'}}</button>
-      </p>
-    </div>
+  <div *ngFor="let dish of category.dishes" [ngStyle]="{display: category.show ? 'block' : 'none'}" id="dishWindow">
+    <img src="https://img.icons8.com/color/48/000000/plus.png" (click)="addInBascet(dish)" id="addBtn" title="+1">
+    <img [src]="dishService.imgPath+category.categoryName+'/'+dish.image" class="categotyIcon" title="{{dish.about}}">
+    <b>{{dish.title+' - '}}</b>
+    <span class="img-thumbnail  bg-secondary text-white" [textContent]="dish.coast+' ugn'"></span>
+    <hr>
   </div>
 </ul>
+

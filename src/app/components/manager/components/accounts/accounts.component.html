@@ -15,7 +15,7 @@
     <td>{{ac.accountStatuse}}</td>
     <td>
       <ul *ngFor="let dish of ac.dishList">
-        <li>{{dish.about + ' ' + dish.coast}}</li>
+        <li>#{{dish.id + ' - ' + dish.title}}</li>
       </ul>
     </td>
   </tr>

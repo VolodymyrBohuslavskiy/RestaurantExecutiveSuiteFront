@@ -84,4 +84,26 @@ export class CategoryComponent implements OnInit {
     }));
     this.dishService.deleteDish(id);
   }
+
+  sendNewCategory(form: NgForm) {
+    if (form.valid &&
+      form.touched
+      && form.value.categoryName !== '' &&
+      form.value.categoryImage !== '') {
+      this.categoryServise.addCategory(form);
+      form.resetForm();
+    }
+    setTimeout(() => {
+      this.ngOnInit();
+    }, 1000);
+  }
+
+  pasteFile(file: Event) {
+    this.categoryServise.pasteFile(file);
+    setTimeout(() => {
+      this.ngOnInit();
+    }, 1000);
+  }
+
+
 }

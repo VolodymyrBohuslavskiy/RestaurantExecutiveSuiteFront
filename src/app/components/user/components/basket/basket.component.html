@@ -1,6 +1,16 @@
+<div [ngStyle]="{display: showbtn ? 'block' : 'none'}">
+  <img src="https://img.icons8.com/color/48/000000/restart.png" class="addBtn" title="Clear"
+       (click)="dishService.basket.splice(0,dishService.basket.length); showbtn=!showbtn">
+</div>
+
 <ul *ngFor="let dish of dishService.basket">
-  <li>{{dish.title}}</li>
-  <button (click)="deleteDish(dish)">Delete</button>
+  <li>
+    <b [textContent]="dish.title" [title]="dish.about"></b>
+    <img src="https://img.icons8.com/color/48/000000/delete-sign.png" (dblclick)="deleteDish(dish)" id="dellBtn" title="Delete">
+  </li>
 </ul>
 <p [ngStyle]="{display: showbtn ? 'none' : 'block'}"> Basket is empty !</p>
-<button (click)="buy()" [ngStyle]="{display: showbtn ? 'block' : 'none'}">Buy</button>
+<div [ngStyle]="{display: showbtn ? 'block' : 'none'}">
+  <img src="https://img.icons8.com/color/48/000000/ok.png" (click)="buy()" class="addBtn" title="Buy">
+  <b [textContent]="dishService.getBasketSum().toFixed(2)" title="Order prise"></b>
+</div>

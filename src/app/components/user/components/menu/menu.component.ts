@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private dishService: DishService
+    public dishService: DishService
   ) {
   }
 

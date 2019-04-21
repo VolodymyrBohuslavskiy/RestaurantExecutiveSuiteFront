@@ -14,13 +14,11 @@ import {KitchenComponent} from './components/kitchen/kitchen.component';
 import {TasklistComponent} from './components/kitchen/components/tasklist/tasklist.component';
 import {ManagerComponent} from './components/manager/manager.component';
 import {CategoryComponent} from './components/manager/components/category/category.component';
-import {AddCategioryComponent} from './components/manager/components/add-categiory/add-categiory.component';
 import {RouterModule, Routes} from '@angular/router';
 import {AccountsComponent } from './components/manager/components/accounts/accounts.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 const routes: Routes = [
-  {path: 'AddCategories', component: AddCategioryComponent},
   {path: 'categories', component: CategoryComponent},
   {path: 'allAccounts', component: AccountsComponent}
 ];
@@ -38,7 +36,7 @@ const routes: Routes = [
     TasklistComponent,
     ManagerComponent,
     CategoryComponent,
-    AddCategioryComponent,
+
     AccountsComponent,
 
   ],

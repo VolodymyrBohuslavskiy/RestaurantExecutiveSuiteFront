@@ -10,8 +10,7 @@ import {NgForm} from '@angular/forms';
 })
 export class CategoryService {
   path = 'http://localhost:8080';
-  imageServer = 'http://127.0.0.1:8887/';
-  updateTimeSec = 1000;
+  updateTimeSec = 10;
   image: File = null;
 
   constructor(

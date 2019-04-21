@@ -1,0 +1,19 @@
+.addBtn{
+  margin: 10px;
+}
+
+.addBtn:hover{
+  box-shadow: inset 0 0 0 10px gray;
+  border-radius: 50%;
+}
+#dishWindow{
+  margin: 10px;
+}
+
+#dellBtn{
+}
+
+#dellBtn:hover{
+  box-shadow: inset 0 0 0 2px gray;
+  border-radius: 50%;
+}

@@ -1,3 +1,8 @@
-<ul *ngFor="let dish of dishService.searchDishes">
-  <li>{{dish.title}}</li>
-</ul>
+<!--<ul *ngFor="let dish of ">-->
+<!--<li>{{dish.title}}</li>-->
+<!--</ul>-->
+<div *ngFor="let dish of dishService.searchDishes" id="dishWindow">
+  <img src="https://img.icons8.com/color/48/000000/plus.png" (click)="addInBascet(dish)" id="addBtn" title="+1">
+  <b>{{dish.title+' - '+dish.coast+' ugn'}}</b>
+  <hr>
+</div>
