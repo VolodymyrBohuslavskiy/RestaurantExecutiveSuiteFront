@@ -17,6 +17,9 @@ import {CategoryComponent} from './components/manager/components/category/catego
 import {RouterModule, Routes} from '@angular/router';
 import {AccountsComponent } from './components/manager/components/accounts/accounts.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { HelloComponent } from './components/hello/hello/hello.component';
+import { LoginComponent } from './components/hello/components/login/login.component';
+import { RegeditComponent } from './components/hello/components/regedit/regedit.component';
 
 const routes: Routes = [
   {path: 'categories', component: CategoryComponent},
@@ -38,6 +41,12 @@ const routes: Routes = [
     CategoryComponent,
 
     AccountsComponent,
+
+    HelloComponent,
+
+    LoginComponent,
+
+    RegeditComponent,
 
   ],
   imports: [

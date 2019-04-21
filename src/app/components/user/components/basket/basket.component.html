@@ -6,7 +6,7 @@
 <ul *ngFor="let dish of dishService.basket">
   <li>
     <b [textContent]="dish.title" [title]="dish.about"></b>
-    <img src="https://img.icons8.com/color/48/000000/delete-sign.png" (dblclick)="deleteDish(dish)" id="dellBtn" title="Delete">
+    <img src="https://img.icons8.com/color/48/000000/delete-sign.png" (click)="deleteDish(dish)" id="dellBtn" title="Delete">
   </li>
 </ul>
 <p [ngStyle]="{display: showbtn ? 'none' : 'block'}"> Basket is empty !</p>
