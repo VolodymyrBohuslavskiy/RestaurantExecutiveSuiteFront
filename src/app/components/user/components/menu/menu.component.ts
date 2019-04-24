@@ -14,10 +14,7 @@ import {DishService} from '../../../../services/dish.service';
 export class MenuComponent implements OnInit {
   categoryes: Category[] = [];
 
-  constructor(
-    private categoryService: CategoryService,
-    public dishService: DishService
-  ) {
+  constructor(private categoryService: CategoryService, private dishService: DishService) {
   }
 
   onlyEntree() {
@@ -31,6 +28,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.categoryService.getCategores().subscribe(categoryes => {
       this.categoryes = categoryes;
+      this.categoryes.forEach(c => c.dishes.forEach(d => d.categoryName = c.categoryName));
       this.onlyEntree();
     });
   }

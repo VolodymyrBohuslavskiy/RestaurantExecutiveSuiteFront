@@ -10,18 +10,18 @@ img {
   margin: auto
 }
 
-.categotyIcon {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  margin-right: 14px;
-}
-
 .dishIcon {
   margin-left: 20px;
   height: 100px;
   width: 100px;
   border-radius: 10%;
+  margin-right: 14px;
+}
+
+.categotyIcon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
   margin-right: 14px;
 }
 

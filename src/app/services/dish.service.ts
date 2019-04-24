@@ -4,6 +4,7 @@ import {Dish} from '../models/Dish';
 import {CategoryService} from './category.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
+import {Category} from '../models/Category';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +20,23 @@ export class DishService {
   ) {
   }
 
-  find(searchWord: string): Observable<Dish[]> {
-    return this.http.get<Dish[]>(this.categoryService.path + '/find_dish', {params: {word: searchWord}});
+  // find(searchWord: string): Observable<Dish[]> {
+  //   return this.http.get<Dish[]>(this.categoryService.path + '/find_dish', {params: {word: searchWord}});
+  // }
+
+  find(searchWord: string): Dish[] {
+    const searchRes: Dish[] = [];
+    this.categoryService.getCategores().forEach(c => c.forEach(c1 =>
+      c1.dishes.forEach(d => {
+        if (d.about.includes(searchWord) || d.title.includes(searchWord)) {
+          d.categoryName = c1.categoryName;
+          this.searchDishes.push(d);
+          searchRes.push(d);
+        }
+      })));
+    return searchRes;
   }
+
 
   getBasketSum(): number {
     let sum = 0;

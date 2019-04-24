@@ -5,6 +5,7 @@
 
 <ul *ngFor="let dish of dishService.basket">
   <li>
+    <img [src]="dishService.imgPath+dish.categoryName+'/'+dish.image" class="categotyIcon" title="{{dish.about}}">
     <b [textContent]="dish.title" [title]="dish.about"></b>
     <img src="https://img.icons8.com/color/48/000000/delete-sign.png" (click)="deleteDish(dish)" id="dellBtn" title="Delete">
   </li>
