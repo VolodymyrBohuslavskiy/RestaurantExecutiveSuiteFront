@@ -11,6 +11,7 @@ import {Category} from '../models/Category';
 })
 export class DishService {
   basket: Dish[] = [];
+  // basketMap = new Map<Dish, number>();
   searchDishes: Dish[] = [];
   imgPath = 'http://127.0.0.1:8887/';
 
@@ -20,11 +21,9 @@ export class DishService {
   ) {
   }
 
-  // find(searchWord: string): Observable<Dish[]> {
-  //   return this.http.get<Dish[]>(this.categoryService.path + '/find_dish', {params: {word: searchWord}});
-  // }
 
   find(searchWord: string): Dish[] {
+    this.searchDishes.splice(0, this.searchDishes.length);
     const searchRes: Dish[] = [];
     this.categoryService.getCategores().forEach(c => c.forEach(c1 =>
       c1.dishes.forEach(d => {
@@ -83,6 +82,26 @@ export class DishService {
 
   deleteDish(id) {
     this.http.delete(this.categoryService.path + '/delete/dish', {params: {deleteId: id}}).subscribe();
+  }
+
+  howMach(arr: Dish[], dish: Dish): number {
+    let i = 0;
+    arr.forEach(value => {
+      if (dish === value) {
+        i++;
+      }
+    });
+    return i;
+  }
+
+  toDishMap() {
+    const basketMap = new Map<Dish, number>();
+    this.basket.forEach(value => {
+      if (!basketMap.has(value)) {
+        basketMap.set(value, this.howMach(this.basket, value));
+      }
+    });
+    return basketMap;
   }
 
 

@@ -1,9 +1,7 @@
-<!--<ul *ngFor="let dish of ">-->
-<!--<li>{{dish.title}}</li>-->
-<!--</ul>-->
+<div [ngStyle]="{display: dishService.searchDishes.length<=0 ? 'block' : 'none'}">Nothing to show :(</div>
 <div *ngFor="let dish of dishService.searchDishes" id="dishWindow">
   <img src="https://img.icons8.com/color/48/000000/plus.png" (click)="addInBascet(dish)" id="addBtn" title="+1">
   <img [src]="dishService.imgPath+dish.categoryName+'/'+dish.image" class="categotyIcon" title="{{dish.about}}">
-  <b>{{dish.title+' - '+dish.coast+' ugn'}}</b>
+  <b>{{dish.title + ' - ' + dish.coast + ' ugn'}}</b>
   <hr>
 </div>

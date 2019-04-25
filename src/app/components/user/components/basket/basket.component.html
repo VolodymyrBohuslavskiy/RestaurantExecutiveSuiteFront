@@ -3,11 +3,28 @@
        (click)="dishService.basket.splice(0,dishService.basket.length); showbtn=!showbtn">
 </div>
 
-<ul *ngFor="let dish of dishService.basket">
+<!--<ul *ngFor="let dish of dishService.basket">-->
+  <!--<li>-->
+    <!--{{dishService.howMach(dishService.basket, dish)}} X-->
+    <!--<img [src]="dishService.imgPath+dish.categoryName+'/'+dish.image" class="categotyIcon" title="{{dish.about}}">-->
+    <!--<b [textContent]="dish.title" [title]="dish.about"></b>-->
+    <!--<img src="https://img.icons8.com/color/48/000000/delete-sign.png" (click)="deleteDish(dish)" id="dellBtn" title="Delete">-->
+  <!--</li>-->
+<!--</ul>-->
+<!--<p [ngStyle]="{display: showbtn ? 'none' : 'block'}"> Basket is empty !</p>-->
+<!--<div [ngStyle]="{display: showbtn ? 'block' : 'none'}">-->
+  <!--<img src="https://img.icons8.com/color/48/000000/ok.png" (click)="buy()" class="addBtn" title="Buy">-->
+  <!--<b [textContent]="dishService.getBasketSum().toFixed(2)" title="Order prise"></b>-->
+<!--</div>-->
+
+
+<ul *ngFor="let dish of dishService.toDishMap() | keyvalue">
   <li>
-    <img [src]="dishService.imgPath+dish.categoryName+'/'+dish.image" class="categotyIcon" title="{{dish.about}}">
-    <b [textContent]="dish.title" [title]="dish.about"></b>
-    <img src="https://img.icons8.com/color/48/000000/delete-sign.png" (click)="deleteDish(dish)" id="dellBtn" title="Delete">
+
+    <img [src]="dishService.imgPath+dish.key.categoryName+'/'+dish.key.image" class="categotyIcon" title="{{dish.key.about}}">
+    <b [textContent]="dish.value"></b> X
+    <b [textContent]="dish.key.title" [title]="dish.key.about"></b>
+    <img src="https://img.icons8.com/color/48/000000/delete-sign.png" (click)="deleteDish(dish.key)" id="dellBtn" title="Delete">
   </li>
 </ul>
 <p [ngStyle]="{display: showbtn ? 'none' : 'block'}"> Basket is empty !</p>

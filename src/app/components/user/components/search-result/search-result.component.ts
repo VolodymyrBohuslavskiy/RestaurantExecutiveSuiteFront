@@ -16,7 +16,6 @@ export class SearchResultComponent implements OnInit {
   ngOnInit() {
   }
 
-
   addInBascet(dish: Dish) {
     this.dishService.basket.push(dish);
   }

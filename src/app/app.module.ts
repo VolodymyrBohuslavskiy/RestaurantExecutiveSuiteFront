@@ -21,6 +21,7 @@ import { HelloComponent } from './components/hello/hello/hello.component';
 import { LoginComponent } from './components/hello/components/login/login.component';
 import { RegeditComponent } from './components/hello/components/regedit/regedit.component';
 
+
 const routes: Routes = [
   {path: 'categories', component: CategoryComponent},
   {path: 'allAccounts', component: AccountsComponent}
