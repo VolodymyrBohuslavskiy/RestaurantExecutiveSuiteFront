@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AccountService} from '../../../../services/account.service';
 import {Account1} from '../../../../models/Account';
 import {CategoryService} from '../../../../services/category.service';
+import {DishService} from '../../../../services/dish.service';
+import {Dish} from '../../../../models/Dish';
 
 @Component({
   selector: 'app-account-list',
@@ -12,7 +14,7 @@ export class AccountListComponent implements OnInit {
   accounts: Account1[] = [];
 
   constructor(
-    private accountService: AccountService,  private categoryService: CategoryService) {
+    private accountService: AccountService, private categoryService: CategoryService, public dishService: DishService) {
   }
 
   ngOnInit() {
@@ -40,5 +42,23 @@ export class AccountListComponent implements OnInit {
     this.setAccountStatuse(id, status);
   }
 
+   howMach(arr: Dish[], dish: Dish): number {
+    let i = 0;
+    arr.forEach(value => {
+      if (dish === value) {
+        i++;
+      }
+    });
+    return i;
+  }
+
+  getMap(arr: Dish[]) {
+arr.forEach(value => {
+
+
+
+})
+
+  }
 
 }

@@ -10,7 +10,7 @@ import {CategoryService} from '../../../../services/category.service';
 })
 export class BasketComponent implements OnInit {
   showbtn = false;
-  constructor(private dishService: DishService, private categoryService: CategoryService) {
+  constructor(public dishService: DishService, private categoryService: CategoryService) {
   }
 
   ngOnInit() {

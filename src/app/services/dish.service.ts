@@ -11,7 +11,6 @@ import {Category} from '../models/Category';
 })
 export class DishService {
   basket: Dish[] = [];
-  // basketMap = new Map<Dish, number>();
   searchDishes: Dish[] = [];
   imgPath = 'http://127.0.0.1:8887/';
 
@@ -48,7 +47,8 @@ export class DishService {
 
   sendOrder() {
     if (this.basket.length !== 0) {
-      this.http.post(this.categoryService.path + '/add_account', JSON.stringify(this.basket)).subscribe();
+      this.basket.forEach(value => value.categoryName = undefined);
+      this.http.post(this.categoryService.path + '/add/account', JSON.stringify(this.basket)).subscribe();
       this.basket.splice(0, this.basket.length);
     }
   }
@@ -61,7 +61,7 @@ export class DishService {
     formData.append('dish', JSON.stringify(dish));
     formData.append('categoryName', form.value.categoryName);
     formData.append('image', dishImage);
-    this.http.post(this.categoryService.path + '/add_dish', formData).subscribe();
+    this.http.post(this.categoryService.path + '/add/dish', formData).subscribe();
   }
 
   changeDishStatus(id: number) {
@@ -84,7 +84,7 @@ export class DishService {
     this.http.delete(this.categoryService.path + '/delete/dish', {params: {deleteId: id}}).subscribe();
   }
 
-  howMach(arr: Dish[], dish: Dish): number {
+  private howMach(arr: Dish[], dish: Dish): number {
     let i = 0;
     arr.forEach(value => {
       if (dish === value) {
@@ -94,16 +94,14 @@ export class DishService {
     return i;
   }
 
-  toDishMap() {
-    const basketMap = new Map<Dish, number>();
-    this.basket.forEach(value => {
-      if (!basketMap.has(value)) {
-        basketMap.set(value, this.howMach(this.basket, value));
+  toDishMap(arr: Dish[]) {
+    const map = new Map<Dish, number>();
+    arr.forEach(value => {
+      if (!map.has(value)) {
+        map.set(value, this.howMach(arr, value));
       }
     });
-    return basketMap;
+    return map;
   }
-
-
 }
 

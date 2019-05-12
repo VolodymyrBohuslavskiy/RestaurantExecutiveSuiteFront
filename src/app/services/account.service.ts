@@ -14,14 +14,14 @@ export class AccountService {
   }
 
   getAccounts(): Observable<Account1[]> {
-    return this.http.get<Account1[]>(this.categoryService.path + '/get_active_accounts');
+    return this.http.get<Account1[]>(this.categoryService.path + '/get/active/accounts');
   }
 
   getAllAccounts(): Observable<Account1[]> {
-    return this.http.get<Account1[]>(this.categoryService.path + '/get_all_accounts');
+    return this.http.get<Account1[]>(this.categoryService.path + '/get/all/accounts');
   }
   setAccountStatuse(id: number, statuse: string) {
-    this.http.patch(this.categoryService.path + '/set_account_statuse', id, {headers: {newStatuse: statuse}}).subscribe();
+    this.http.patch(this.categoryService.path + '/set/account/statuse', id, {headers: {newStatuse: statuse}}).subscribe();
   }
 }
 

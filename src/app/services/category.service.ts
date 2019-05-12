@@ -19,7 +19,7 @@ export class CategoryService {
   }
 
   getCategores(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.path + '/get_categoryes');
+    return this.http.get<Category[]>(this.path + '/get/categoryes');
   }
 
   pasteFile(file) {
@@ -31,7 +31,7 @@ export class CategoryService {
     console.log(form.value.categoryName);
     formData.append('category', form.value.categoryName);
     formData.append('categoryImage', this.image, this.image.name);
-    this.http.post(this.path + '/create_category', formData).subscribe();
+    this.http.post(this.path + '/create/category', formData).subscribe();
   }
 
 
