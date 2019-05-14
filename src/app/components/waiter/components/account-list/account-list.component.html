@@ -8,13 +8,9 @@
     </button>
     <button (click)="pay(account.id)">Pay</button>
 
-
-    <ul *ngFor="let dish of account.dishList">
-      <li>{{dish.title+' '+dish.image+' '+dish.entree+' '+dish.categoryName+' '+dish.id+' '+dish.about+' '+dish.coast+' '+dish.show}}</li>
-    <!--<li>{{account.dishList[0].id==account.dishList[2].id}}</li>-->
-
+    <ul *ngFor="let dish of dishService.toDishMap(account.dishList) | keyvalue">
+      <li [textContent]="dish.value+' '+dish.key.title"></li>
     </ul>
-
   </li>
 </ul>
 

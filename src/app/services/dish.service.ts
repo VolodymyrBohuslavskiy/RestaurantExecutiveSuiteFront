@@ -84,10 +84,29 @@ export class DishService {
     this.http.delete(this.categoryService.path + '/delete/dish', {params: {deleteId: id}}).subscribe();
   }
 
+  // private howMach(arr: Dish[], dish: Dish): number {
+  //   let i = 0;
+  //   arr.forEach(value => {
+  //     if (dish === value) {
+  //       i++;
+  //     }
+  //   });
+  //   return i;
+  // }
+  //
+  // toDishMap(arr: Dish[]) {
+  //   const map = new Map<Dish, number>();
+  //   arr.forEach(value => {
+  //     if (!map.has(value)) {
+  //       map.set(value, this.howMach(arr, value));
+  //     }
+  //   });
+  //   return map;
+  // }
   private howMach(arr: Dish[], dish: Dish): number {
     let i = 0;
     arr.forEach(value => {
-      if (dish === value) {
+      if (dish.id === value.id) {
         i++;
       }
     });
@@ -96,12 +115,13 @@ export class DishService {
 
   toDishMap(arr: Dish[]) {
     const map = new Map<Dish, number>();
-    arr.forEach(value => {
-      if (!map.has(value)) {
-        map.set(value, this.howMach(arr, value));
+    arr.forEach(dish => {
+      if (!map.has(arr.find(value => value.id === dish.id))) {
+        map.set(dish, this.howMach(arr, dish));
       }
     });
     return map;
   }
+
 }
 

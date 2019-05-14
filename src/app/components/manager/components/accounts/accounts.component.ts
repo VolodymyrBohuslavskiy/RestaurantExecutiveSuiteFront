@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Account1} from '../../../../models/Account';
 import {AccountService} from '../../../../services/account.service';
 import {CategoryService} from '../../../../services/category.service';
+import {DishService} from '../../../../services/dish.service';
 
 @Component({
   selector: 'app-accounts',
@@ -11,7 +12,7 @@ import {CategoryService} from '../../../../services/category.service';
 export class AccountsComponent implements OnInit {
   accounts: Account1[] = [];
 
-  constructor(private accountService: AccountService, private categoryService: CategoryService) {
+  constructor(private accountService: AccountService, private categoryService: CategoryService, public dishService: DishService ) {
   }
 
   ngOnInit() {

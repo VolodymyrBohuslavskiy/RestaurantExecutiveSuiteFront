@@ -14,8 +14,8 @@
     <td>{{ac.date}}</td>
     <td>{{ac.accountStatuse}}</td>
     <td>
-      <ul *ngFor="let dish of ac.dishList">
-        <li>#{{dish.id + ' - ' + dish.title}}</li>
+      <ul *ngFor="let dish of dishService.toDishMap(ac.dishList) | keyvalue">
+        <li>{{dish.value+' x '+ dish.key.title}}</li>
       </ul>
     </td>
   </tr>

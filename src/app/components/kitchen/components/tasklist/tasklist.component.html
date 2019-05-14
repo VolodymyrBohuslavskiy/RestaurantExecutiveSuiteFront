@@ -5,8 +5,8 @@
     <button (click)="ready(task.id)">READY
     </button>
 
-    <ul *ngFor="let dish of task.dishList">
-      <li>{{dish.id + ' ' + dish.title + ' ' + dish.about + ' ' + dish.coast}}</li>
+    <ul *ngFor="let dish of dishService.toDishMap(task.dishList) | keyvalue">
+      <li [textContent]="dish.value + ' ' + dish.key.title + ' ' + dish.key.about"></li>
 
     </ul>
   </li>

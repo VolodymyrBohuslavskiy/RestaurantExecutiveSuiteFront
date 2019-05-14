@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AccountService} from '../../../../services/account.service';
 import {Account1} from '../../../../models/Account';
 import {CategoryService} from '../../../../services/category.service';
+import {DishService} from '../../../../services/dish.service';
 
 @Component({
   selector: 'app-tasklist',
@@ -12,7 +13,8 @@ export class TasklistComponent implements OnInit {
   tasks: Account1[] = [];
 
   constructor(private accountService: AccountService,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private dishService: DishService) {
 
   }
 
